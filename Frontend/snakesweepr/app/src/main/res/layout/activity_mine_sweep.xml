@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="0,2"
+    android:background="@drawable/purple">
+
+    <TableRow>
+
+        <ImageView
+            android:id="@drawable/logosnake"
+            android:layout_width="218dp"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:gravity="center_horizontal"
+            android:padding="5dip"
+            android:src="@drawable/logosnake"/>
+
+        <TextView
+            android:id="@+id/MineCount"
+            android:layout_column="2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dip"
+            android:textColor="#05df08"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="000" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_column="0"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="15"
+            android:padding="10dip" />
+    </TableRow>
+
+    <TableRow android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/MineField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:stretchColumns="*"
+            android:layout_span="15"
+            android:padding="5dip" >
+        </TableLayout>
+
+    </TableRow>
+    <TableRow>
+    <Button
+        android:id="@+id/returnChat"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/return_to_lobby"
+        android:layout_column="0"/>
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/sign_out"
+        android:layout_column="2"/>
+</TableRow>
+</TableLayout>

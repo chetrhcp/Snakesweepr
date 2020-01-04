@@ -1,0 +1,88 @@
+[for server side]
+--how to use:--
+
+var Game = require("./game.js");
+
+//the two parameters are strings indicating their username
+var game = new Game(snake_user, ms_user);
+
+//the game initializes when it is constructed, this just returns the initial game state
+var output = game.gameInit();
+
+//when you get data from a device
+
+  game.update(data);
+//the formatting for the data is below
+
+
+---new game data---
+{type:"new_game", lobby_name:"(*lobby name*)"}
+
+
+[client stuff]
+----Data received by device----
+
+The data will be received as an object containing two smaller objects inside it:
+one for the minesweeper data and one for the snake data.
+
+ex. var object = {snake: {snake data}, minesweeper: {ms data}}
+
+
+
+
+note: both players will get all of the data.
+note: all points are objects that have an x and a y variable i.e. var p = {x:2,y:4}
+
+--snake data--
+  username: username of the snake player
+  food_pos: a point that indicates where the food is to be placed
+  walls: an array of points that indicates where the new walls should be placed
+  score: how many points the snake player has.
+  snake_pos: an array of points indicating where the snake is on the board
+  died: boolean that is true if the snake hits a wall
+  won: boolean that is true if the snake player has won
+
+--minesweeper data--
+  username: username of the minesweeper player
+  mine_pos: an array of points where the mines are located.
+  new_tiles: an array of points that are to be re-covered in the MS game
+  score: how many points the MS player has
+  died: boolean that is true if the ms player uncovers a bomb
+  won: boolean that is true if the ms player has won
+
+if a catagory is empty, assume nothing changes
+
+
+
+
+
+----Data sent by device----
+
+  Each device will send only their own data to the server
+
+  --snake Data--
+    type:"update_game"
+    lobby_id: id of lobby //(could change to username)
+    data: object contains the following data:
+      username: username of the snake player
+      head_pos: point indicating where the front of the snake is attempting to move.
+
+
+
+  --minesweeper data--
+    type:"update_game"
+    lobby _id: id of the lobby //might change to username for conistency
+    data: object contains the following data:
+      username: username of the ms player
+      tile: a point indicating the tile where the ms player clicked
+      click_type: a string, "normal" for a normal click, "flag" for flagging a tile
+
+the data will be sent and received as a JSON object
+
+examples
+
+snake data
+{"username":"myman72", "head_pos":{"x":5, "y":7}}
+
+minesweeper data
+{"username": "2_andrew_4U", "tile": {"x":2, "y":6}, "click_type": "normal"}

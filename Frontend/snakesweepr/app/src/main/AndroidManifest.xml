@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.snakesweepr">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logoapp"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="mine.MineSweep"
+            android:exported="true"
+        />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".createAccount" />
+        <activity android:name=".settings" />
+        <activity android:name=".lobbyPage"/>
+        <activity android:name=".userProfile"/>
+        <activity android:name=".forgotPass" />
+        <activity android:name=".recoverPinEnter" />
+        <activity android:name=".userChat" />
+        <activity
+            android:name="game.Game"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_game"
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".homeLobby" />
+
+
+        <service
+            android:name="game.SoundService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

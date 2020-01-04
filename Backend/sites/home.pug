@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+	<head>
+		<title>Home</title>
+		<script src="#{name}-script.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Home</h1>
+			<p id="welcome">Welcome, #{username}</p>
+			<p id="server-state">Disconnected.</p>
+		</header>
+		
+		<nav>
+			<a href="/logout">Logout</a>
+		</nav>
+
+		<main>
+
+			<h3>Last Login: <span id="last-login">#{lastlogin}</span></h3>
+			
+
+			if(users)
+				<div id="users-list">
+					<h1>Users</h1>
+					<table id="users-table">
+						<tr>
+							<th>Name</th>
+							<th>Username</th>
+							<th>Level</th>
+							<th>Online</th>
+							<th>Last Seen</th>
+						</tr>
+						each user in users
+							<tr>
+								<td>#{user.firstname} #{user.lastname}</td>
+								<td>#{user.username}</td>
+								<td>#{user.level}</td>
+								<td>#{user.online}</td>
+								<td>#{user.lastseen}</td>
+							</tr>
+					</table>
+				</div>
+
+			if(lobbies)
+				<div id="lobbies-list">
+					<h1>Lobbies</h1>
+					<div id="lobbies">
+					each lobby in lobbies
+						<div id="#{lobby.lobbyid}">
+							<h3>#{lobby.name} (#{lobby.creator})
+								if(lobby.isprivate == 1)
+									| [Private]
+							</h3>
+
+							<table>
+								<tr>
+									<td>
+										<ul style="width:100px">
+											each user in lobby.users
+												<li>#{user.username}</li>
+										</ul>
+									</td>
+									<td>
+										<div style="margin-left:100px">
+											<div id="#{lobby.name}" class="lobby-chat" style="overflow:scroll; height:150px;width:300px;">
+											each chat in lobby.chats
+												<p>#{chat}</p> 
+											</div>
+											<form onsubmit="chat_message(event,'#{lobby.name}')">
+												<input type="text" id="chat_#{lobby.name}" name="chat-msg">
+												<input type="submit" value="Send">
+											</form>
+										</div>
+									</td>
+								</tr>
+							</table>
+					</div>
+				</div>
+		</main>
+		<script>set_chat_state();</script>
+	</body>
+

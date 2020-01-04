@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Backend API</title>
+	</head>
+	<body>
+		<h1>Backend API Documentation</h1>
+		
+		<hr>
+
+		<div id="level-0" style="width:750px">
+			<h2>Runner/Manager</h2>
+
+			<h3>Server</h3>
+			<p>Used to initialize and setup all aspects of the server. Configurations for the web and socket server are set and then the rest of the handlers are initialized.</p>
+			<ul>
+				<li>There are no functions associated with this module.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="level-1" style="width:750px">
+			<h2>Interface Handlers</h2>
+
+			<h3>Site Handler</h3>
+			<p>Handles all connections and data pathways dealing with the website. This website serves data in a semi-formatted, raw format, that allows admin users to see the status of the server and all the functions that are being utilized.</p>
+			<ul>
+				<li>[public] init(app,infoRouter) | Server Application Instance, Info Router Object</li>
+			</ul>
+
+			<h3>Socket Handler</h3>
+			<p>Handles all connections and data pathways dealing with WebSockets. The WebSocket server deals with data sent from the website (in terms of semi-live data) and the app (all data is handled via sockets from the app).</p>
+			<ul>
+				<li>[public] init(app,infoRouter) | Server Application Instance, Info Router Object</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="level-2" style="width:750px">
+			<h2>Routing</h2>
+
+			<h3>Info Router</h3>
+			<p></p>
+			<ul>
+				<li>[public] init()</li>
+				<li>[public] handle_data(data,conn) | Raw Data From Web/Socket Server, Connection Identifier (in this case, the generated socketid).</li>
+				
+				<li>[private] middleman(dataPacket) | DataPacket object. Ideally created from the submitted data in handle_data().</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="level-3" style="width:750px">
+			<h2>Endpoint Function Executors</h2>
+
+			<h3>User Handler</h3>
+			<p>Handles all the data associated with users, once it has been routed down from the interface.</p>
+			<ul>
+				<li>[public] reg_new_user(dataPacket) | DataPacket object, with data pertaining to the user function.</li>
+				<li>[public] forgot_password(dataPacket) | DataPacket object, with data pertaining to the user function.</li>
+				<li>[public] reset_password(dataPacket) | DataPacket object, with data pertaining to the user function.</li>
+				<li>[public] login(dataPacket) | DataPacket object, with data pertaining to the user function.</li>
+
+				<li>[private] check_user_status()</li>
+			</ul>
+
+			<h3>Lobby Handler</h3>
+			<p>Handles all the data associated with lobbies, once it has been routed down from the interface.</p>
+			<ul>
+				<li>[public] init()</li>
+				<li>[public] new_lobby(dataPacket) | DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] join_lobby(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] leave_lobby(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] get_lobby(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] update_socket(username,socketid) |  Username of User, Id of Socket</li>
+
+				<li>[public] get_all_lobbies() |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] get_public_lobbies(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] get_private_lobbies(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] lobby_exists(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+				<li>[public] user_in_lobby(lobby,username) |  Lobby Name, Username of User</li>
+
+				<li>[public] handle_lobby_chat(dataPacket) |  DataPacket object, with data pertaining to the lobby function.</li>
+
+				<li>[private] create_user(username) |  Username of User.</li>
+
+
+			</ul>
+
+			<h3>Game Handler</h3>
+			<p></p>
+			<ul>
+				<li>[public] newGame(dataPacket) | DataPacket object, with data pertaining to the game function.</li>
+				<li>[public] updateGame(dataPacket) | DataPacket object, with data pertaining to the game function.</li>
+				<li>[public] viewGames()</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="level-4" style="width:750px">
+			<h2>Database Functions</h2>
+
+			<h3>SS Database</h3>
+			<p>This is the class that gets created for the use of accessing the database. It is a compilation of all the database functions across the different database modules.</p>
+			<ul>
+				<li>There are no functions associated with this module.</li>
+			</ul>
+
+			<!-- 
+			<h3>User Database</h3>
+			<p></p>
+			<ul>
+				<li></li>
+			</ul>
+
+			<h3>Lobby Database</h3>
+			<p></p>
+			<ul>
+				<li></li>
+			</ul>
+
+			<h3>Chat Database</h3>
+			<p></p>
+			<ul>
+				<li></li>
+			</ul>
+
+			<h3>Database Utilities</h3>
+			<p></p>
+			<ul>
+				<li></li>
+			</ul>
+			-->
+			<h3>Database Functions (Base Level)</h3>
+			<p></p>
+			<ul>
+				<li>store_data(table,columns,data,func=null)</li>
+				<li>get_data(table,columns,where,func=null)</li>
+				<li>search_data(table,columns,where,func=null)</li>
+				<li>remove_data(table,where,func=null)</li>
+				<li>modify_data(table,columns,data,where,func=null)</li>
+			</ul>
+		</div>
+
+	</body>
+</html>

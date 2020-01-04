@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:id="@+id/TextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:gravity="bottom"
+                android:text="@string/settings_name"
+                android:textAlignment="center"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/settings_return"
+                android:textColor="@color/colorAccent" />
+
+            <Button
+                android:id="@+id/buttonMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/buttonBack"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/settings_more"
+                />
+
+            <TextView
+                android:id="@+id/settingsBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/buttonMore"
+                android:visibility="invisible"
+                android:text="@string/settings_bio"
+                android:textAlignment="center"
+                />
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

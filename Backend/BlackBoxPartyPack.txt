@@ -1,0 +1,143 @@
+Login:
+	- Send:
+		- type:"login"
+		- platform:"app"
+		- username:[submitted]
+		- password:[submitted]
+	- Recv:
+		- type:"login"
+		- platform:"app"
+		- success:[true/false]
+		- sessionid
+		- username
+		- servmsg:[May have a note, may not.]
+
+New User
+	- Send:
+		- type:"new_user"
+		- platform:"app"
+		- firstname
+		- lastname
+		- username
+		- password
+		- bdate
+		- email
+	- Recv:						//Will expect a login message too.
+		- type:"new_user"
+		- platform:"app"
+		- username
+		- success:[true/false]
+		- servmsg:[May have a note, may not.]
+
+Forgot Password:
+	- Send:
+		- type:"forgot_password"
+		- platform:"app"
+		- username
+	- Recv:
+		- type:"forgot_password"
+		- platform:"app"
+		- username
+		- success:[true/false]
+		- servmsg:[May have a note, may not.]
+
+New Lobby
+	- Send:
+		- type:"new_lobby"
+		- platform:"app"
+		- username
+		- sessionid
+		- name 			//Lobby Name
+	- Recv:
+		- type:"new_lobby"
+		- platform:"app"
+		- sessionid
+		- success
+
+Join Lobby
+	- Send:
+		- type:"join_lobby"
+		- platform:"app"
+		- username
+		- sessionid
+		- name
+
+	- Recv:
+		- type:"join_lobby"
+		- platform:"app"
+		- username
+		- sessionid
+		- success
+
+Leave Lobby
+	- Send:
+		- type:"leave_lobby"
+		- platform:"app"
+		- username
+		- sessionid
+		- name
+		
+	- Recv:
+		- type:"leave_lobby"
+		- platform:"app"
+		- username
+		- sessionid
+		- success
+
+Room Message
+	- Send:
+		- type:"room_chat"
+		- platform:"app"
+		- username
+		- sessionid
+		- room
+		- message
+	- Recv:
+		- type:"room_chat"
+		- platform:"app"
+		- room
+		- from
+		- message
+
+Direct Message
+	- Send:
+		- type:"dm_chat"
+		- platform:"app"
+		- username
+		- sessionid
+		- to
+		- message
+	- Recv:
+		- type:"dm_chat"
+		- platform:"app"
+		- from
+		- message
+
+Chat Message
+	- Send:
+		- type:"chat_msg"
+		- platform:"app"
+		- sessionid
+		- chatid
+		- message
+	- Recv:
+		- type:"chat_msg"
+		- platform:"app"
+		- chatid
+		- username
+		- message
+
+
+
+
+Game Data
+	- Send:
+		- type:"game_data"
+		- platform:"app"
+		- sessionid
+		- data:
+			- 
+	- Recv:
+		- type:"game_data"
+		- platform:"app"
+		- 

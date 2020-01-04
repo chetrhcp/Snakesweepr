@@ -1,0 +1,16 @@
+Database Structure
+	Users - User Accounts
+		username	: Username
+		password	: Password
+		firstname	: Alright.
+		lastname	: Really?
+		level		: Type of user (basically).
+		lastseen	: Last login time.
+		online		: Current online status. (May use actions to update).
+		recnum		: Number of password recoveries.
+		recpin		: PIN to send to recover password. Assigned at creation. Updated each recovery.
+		reclast		: Last recovery request time. (PIN expiry).
+		email		: Wonder what this could be.
+		bdate		: Marvelous!
+		appsess		: Session ID for the app. Used to track login and timeout.
+		websess		: Session ID for the web app. Used to track login and timeout.

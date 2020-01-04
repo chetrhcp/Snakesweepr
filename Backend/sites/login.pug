@@ -1,0 +1,19 @@
+html
+	head
+		title=title
+		<script src="#{name}-script.js"></script>
+	body
+		h1=login
+		<form id="login-form" method="POST" action="/#{name}">
+			<input name="type" value="login" hidden>
+			<input name="platform" value="web" hidden>
+
+			<input type="text" id="login-username" name="username" placeholder="Username">
+			<br>
+			<input type="password" id="login-password" name="password" placeholder="Password">
+			<br>
+			<input type="submit">
+		</form>
+
+		if(error)
+			<p>#{error}</p>

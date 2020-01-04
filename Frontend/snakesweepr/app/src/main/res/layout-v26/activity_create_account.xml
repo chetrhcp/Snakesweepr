@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createAccount">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="64dp">
+
+        <RelativeLayout
+            android:id="@+id/TextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="@string/createPage_name"/>
+
+            <EditText
+                android:id="@+id/editTextUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_user"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextUsername"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_firstName"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextFirst"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_lastName"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextLast"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_pass"
+                android:inputType="textPassword"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_email"
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextBdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextEmail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/createPage_birthday"
+                android:inputType="date"
+                android:autofillHints="" />
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextBdate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="@string/createPage_button" />
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lobbyName"
+        android:text="@string/lobby_name"
+        android:textSize="40sp">
+    </TextView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lobbyCreate"
+        android:text="@string/lobby_create"
+        android:textSize="20sp">
+    </Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/lobbyChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/lobby_choice"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lobby_private" />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_height="wrap_content"
+        android:id="@+id/lobbyList"
+        android:layout_width="match_parent"
+        android:dividerHeight="5dp"
+        android:layout_margin="10dp">
+    </ListView>
+</LinearLayout>

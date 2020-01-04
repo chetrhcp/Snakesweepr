@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recoverPinEnter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:text="@string/recovery_name"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/editTextNewPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="250dp"
+                android:ems="10"
+                android:hint="@string/recovery_password"
+                android:inputType="number"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/editTextPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="200dp"
+                android:ems="10"
+                android:hint="@string/recovery_pin"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <Button
+                android:id="@+id/ButtonRecovery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="400dp"
+                android:ems="10"
+                android:text="@string/recovery_submit"/>
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
